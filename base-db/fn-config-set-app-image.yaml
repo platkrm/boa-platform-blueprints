@@ -5,7 +5,7 @@ metadata:
   annotations:
     config.kubernetes.io/local-config: "true"
   labels:
-    app: base-app
+    app: base-db
 source: |-
   def set_name(resources):
     pkgName = ""
@@ -23,7 +23,7 @@ source: |-
       return
 
     for resource in ctx.resource_list["items"]:
-      if resource["kind"] == "Deployment":
+      if resource["kind"] == "StatefulSet":
         resource["metadata"]["name"] = pkgName
         resource["spec"]["template"]["spec"]["containers"][0]["image"]="gcr.io/bank-of-anthos-ci/"+pkgName+":app-version"
   set_name(ctx.resource_list["items"])
