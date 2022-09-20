@@ -4,8 +4,6 @@ metadata:
   name: set-labels
   annotations:
     config.kubernetes.io/local-config: "true"
-  labels:
-    app: base-app
 labelsFrom:
   - label: app
     source:

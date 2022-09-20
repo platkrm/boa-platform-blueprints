@@ -4,8 +4,6 @@ metadata:
   name: set-name
   annotations:
     config.kubernetes.io/local-config: "true"
-  labels:
-    app: base-app
 source: |-
   def set_name(resources):
     pkgName = ""
