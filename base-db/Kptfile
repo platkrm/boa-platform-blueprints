@@ -4,8 +4,6 @@ metadata:
   name: base-db
   annotations:
     config.kubernetes.io/local-config: "true"
-  labels:
-    app: base-db
 info:
   description: sample description
 pipeline:
