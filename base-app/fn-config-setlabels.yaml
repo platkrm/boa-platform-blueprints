@@ -6,5 +6,8 @@ metadata:
     config.kubernetes.io/local-config: "true"
   labels:
     app: base-app
-labels:
-  app: base-app
+labelsFrom:
+  - label: app
+    source:
+      kind: Kptfile
+      fieldPath: metadata.name
